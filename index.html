@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7563ed">
+  <meta name="description" content="HabitPro - مدیریت عادت‌ها و اهداف روزانه">
+  <title>HabitPro | مدیریت عادت‌ها</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">H</div>
+        <div>
+          <h1>Habit<span>Pro</span></h1>
+          <small>بهترین نسخه خودت باش</small>
+        </div>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="تغییر تم">🌙</button>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div>
+          <p class="date" id="todayDate"></p>
+          <h2>سلام! آماده‌ای؟ 👋</h2>
+          <p>امروز یک قدم به اهداف خودت نزدیک‌تر شو.</p>
+        </div>
+        <div class="welcome-icon">🎯</div>
+      </section>
+
+      <section class="stats">
+        <div class="stat-card">
+          <div class="stat-icon purple">📋</div>
+          <div>
+            <strong id="totalHabits">0</strong>
+            <span>کل عادت‌ها</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green">✅</div>
+          <div>
+            <strong id="completedHabits">0</strong>
+            <span>انجام‌شده امروز</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orange">🔥</div>
+          <div>
+            <strong id="bestStreak">0</strong>
+            <span>بهترین زنجیره</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-header">
+          <div>
+            <h3>پیشرفت امروز</h3>
+            <p>هر قدم کوچک مهم است!</p>
+          </div>
+          <strong id="progressPercent">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-caption" id="progressCaption">هنوز شروع نکرده‌ای!</p>
+      </section>
+
+      <section class="habits-section">
+        <div class="section-heading">
+          <div>
+            <h3>عادت‌های من</h3>
+            <p>لیست برنامه‌های روزانه</p>
+          </div>
+          <button class="add-btn" id="openFormBtn">＋ افزودن</button>
+        </div>
+
+        <form id="habitForm" class="habit-form hidden">
+          <h3 id="formTitle">عادت جدید</h3>
+          <input type="hidden" id="editId">
+
+          <label for="habitName">نام عادت</label>
+          <input id="habitName" type="text" maxlength="50"
+                 placeholder="مثلاً مطالعه کتاب..." required>
+
+          <label for="habitCategory">دسته‌بندی</label>
+          <select id="habitCategory">
+            <option value="سلامتی">سلامتی</option>
+            <option value="ورزش">ورزش</option>
+            <option value="آموزش">آموزش</option>
+            <option value="شخصی">شخصی</option>
+            <option value="کار">کار</option>
+          </select>
+
+          <label for="habitEmoji">ایموجی</label>
+          <input id="habitEmoji" type="text" maxlength="4" value="⭐">
+
+          <div class="form-actions">
+            <button type="submit" class="save-btn">ذخیره عادت</button>
+            <button type="button" class="cancel-btn" id="cancelFormBtn">لغو</button>
+          </div>
+        </form>
+
+        <div id="habitsList" class="habits-list"></div>
+
+        <div id="emptyState" class="empty-state hidden">
+          <div>🌱</div>
+          <h3>هنوز عادتی نداری!</h3>
+          <p>اولین عادت خودت را اضافه کن و شروع کن.</p>
+          <button class="add-btn" id="emptyAddBtn">＋ ساخت اولین عادت</button>
+        </div>
+      </section>
+
+      <section class="weekly-section">
+        <div class="section-heading">
+          <div>
+            <h3>گزارش هفتگی</h3>
+            <p>عملکرد هفت روز گذشته</p>
+          </div>
+          <span class="chart-label">۷ روز</span>
+        </div>
+        <div id="weeklyChart" class="weekly-chart"></div>
+      </section>
+
+      <section class="tips-card">
+        <div class="tips-icon">💡</div>
+        <div>
+          <h3>یادت باشد!</h3>
+          <p>موفقیت نتیجه کارهای کوچک و تکرار روزانه آنهاست. تسلیم نشو!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-logo">HabitPro</div>
+      <p>ساخته شده برای زندگی بهتر ❤️</p>
+      <small>Version 1.0.0</small>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
